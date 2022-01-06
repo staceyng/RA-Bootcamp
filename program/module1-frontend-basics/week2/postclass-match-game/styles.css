@@ -1,0 +1,38 @@
+body {
+  background-color: lightblue;
+  font-family: Helvetica, sans-serif;
+}
+
+.square {
+  padding: 10px;
+  margin: 10px;
+  background-color: grey;
+  display: inline-block;
+  height: 70px;
+  width: 50px;
+  border-radius: 5px;
+  vertical-align: top;
+  text-align: center;
+  border-color: black;
+  border-width: 5px;
+}
+
+#message-div {
+  font-size: 24px;
+  padding: 16px 0px 0px 10px;
+}
+
+#top-div {
+  display: flex;
+}
+
+#timer-div {
+  margin-top: 3px;
+  margin-left: 10px;
+  width: 125px;
+}
+
+#user-top-div {
+  margin-left: 10px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,97 @@
+.logo {
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav-icons {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  position: relative;
+}
+
+input {
+  height: 30px;
+  border-radius: 18px;
+  background-color: silver;
+  width: 325px;
+}
+
+.fa-search {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.main-banner {
+  background-color: lightgreen;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.main-banner-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.img-circle {
+  border-radius: 35.5px;
+}
+
+.popular-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.popular-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.unique-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.unique-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.btm-banner {
+  background-color: darkblue;
+}
+
+.btm-links {
+  color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+}

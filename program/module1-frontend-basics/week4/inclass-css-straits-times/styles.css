@@ -1,0 +1,127 @@
+body {
+  background-color: white;
+  margin: 0;
+}
+
+#top-header {
+  height: 25px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 150px;
+  margin-left: 5px;
+}
+
+#hamburger-icon {
+  float: right;
+  width: 25px;
+}
+h2 {
+  margin: 5px 5px 10px 5px;
+  text-align: center;
+}
+
+h3 {
+  margin: 5px 5px 15px 5px;
+}
+
+h4 {
+  border-bottom: 1px solid lightgray;
+  margin: 5px 5px 15px 5px;
+}
+
+hr {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+#life-header {
+  margin-top: 3px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+
+.img-top {
+  width: 100%;
+}
+.img-btm {
+  width: 49%;
+  height: 100px;
+}
+#ad-1 {
+  width: 100%;
+}
+
+.more-button {
+  float: right;
+}
+
+#envelope-icon {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+footer {
+  padding: 10px;
+}
+
+.dark-blue-bg {
+  background-color: #0a2a5d;
+}
+
+.font-white {
+  color: white;
+}
+
+#sign-up-input {
+  height: 34px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+#sign-up-button {
+  border-radius: 0px 15px 15px 0px;
+  padding: 5px 15px 5px 15px;
+  height: 40px;
+  margin: 0;
+}
+
+#newsletter-sign-up {
+  margin-top: 10px;
+}
+
+#disclaimer {
+  font-size: 12px;
+}
+
+.bottom-zero {
+  margin-bottom: 0px;
+}
+
+#categories {
+  flex-direction: row;
+}
+
+#categories > ul {
+  flex-grow: 1;
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: orange; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}

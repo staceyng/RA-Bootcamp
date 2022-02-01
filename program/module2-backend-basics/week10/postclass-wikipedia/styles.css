@@ -1,0 +1,48 @@
+body {
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#logo_main_header {
+  margin: 1rem auto 0.5rem;
+  display: flex;
+}
+
+#row_header {
+  margin: auto;
+}
+
+#wiki_header {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+#big_header {
+  font-size: 24px;
+}
+
+#small_header {
+  margin: -20px auto;
+  font-size: 12px;
+}
+
+/* .search_input {
+  margin: auto;
+  width: 300px;
+} */
+
+.text_link {
+  color: blue;
+  font-size: x-small;
+  margin-bottom: 0px;
+}
+
+.text_subscript {
+  font-size: xx-small;
+  color: grey;
+}
+
+.dropdownMenuButton {
+  fill: none;
+  margin: auto;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>User Auth Password Hashing Exercise</h2>
+    <% if (action === "signup"){ %>
+    <h3>SIGN UP FORM</h3>
+    <form action="/signup" method="POST">
+      <label for="email">Email:</label><br />
+      <input
+        type="text"
+        id="email"
+        name="email"
+        value="johndoe@email.com"
+      /><br />
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <% } else { %>
+    <h3>LOGIN FORM</h3>
+    <form action="/login" method="POST">
+      <label for="email">Email:</label><br />
+      <input
+        type="text"
+        id="email"
+        name="email"
+        value="johndoe@email.com"
+      /><br />
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <% } %>
+  </body>
+</html>

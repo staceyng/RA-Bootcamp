@@ -1,0 +1,79 @@
+<%- include('header'); -%>
+<%- include('navbar'); -%>
+<body>
+  <div class="container">
+    <div class="row-12 mt-3">
+      <a href="/" class="link-primary">< Back to all birds</a>
+    </div>
+    <div class="row-12 mt-3">
+      <span>
+        <% if (action == "Add"){ %>
+        <h1 class="display-4 text-left"> Add a new bird</h1>
+        <p class="fw-normal text-muted" >Fill in all fields about the birds</p>
+        <% } else { %>
+        <h1 class="display-4 text-left"> Edit sighting <%= birdId ? birdId : '' %></h1>
+        <p class="fw-normal text-muted" >Amend current bird watching notes</p>
+        <% } %>
+        <hr class="border-2 border-top border-dark">
+      </span>
+    </div>
+    <div class="row-12 mt-3">
+      <div class="col-md-8 p-1">
+        <% if (action == "Add"){ %>
+          <form action="/note" method="POST">
+          <% } else { %>
+          <form action="/note/<%= birdId %>/edit?_method=PUT" method="POST">
+          <% } %>
+          <!-- date_sighted -->
+          <label for="date_sighted" class="form-label">Date sighted</label>
+          <input type="date" class="form-control" id="date_sighted" name="date_sighted" value="<%= bird ? bird.formatted_date : '' %>" required>
+          <br>
+          <!-- behavior -->
+          <label for="behavior" class="form-label">Behavior</label>
+          <br>
+          <% behaviors.forEach((b)=> { %>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="<%=b.behavior%>" value="<%=b.behavior%>" name="behaviors" <%= selectedBehaviors.includes(b.behavior) ? "checked" : "" %>/>
+              <label class="form-check-label" for="<%=b.behavior%>"><%=b.behavior%></label>
+            </div>
+          <% }); %>
+          <br>
+          <br>
+          <!-- <label for="behavior" class="form-label">Behavior</label> -->
+          <!-- <textarea class="form-control" id="behavior" rows="2" name="behavior" required><%= bird ? bird.behavior : '' %></textarea> -->
+          <!-- species -->
+          <label for="species" class="form-label">Species</label>
+          <select class="form-select" name="species_id">
+            <% species.forEach((s) => { %>
+            <option value="<%= s.id %>"><%= s.name %></option>
+            <% }); %>
+          </select>
+          <br>
+          <!-- flock_size -->
+          <label for="flock_size" class="form-label">Flock size</label>
+          <input type="number" class="form-control" id="flock_size" name="flock_size" value="<%= bird ? bird.flock_size : '' %>" required>
+          <br>
+          <!-- habitat -->
+          <label for="habitat" class="form-label">Habitat</label>
+          <textarea class="form-control" id="habitat" rows="2" name="habitat"><%= bird ? bird.habitat : '' %></textarea>
+          <br>
+          <!-- appearance -->
+          <label for="appearance" class="form-label">Appearance</label>
+          <textarea class="form-control" id="appearance" rows="2" name="appearance"><%= bird ? bird.appearance : '' %></textarea>
+          <br>
+          <!-- vocalisations -->
+          <label for="vocalisations" class="form-label">Vocalisations</label>
+          <textarea class="form-control" id="vocalisations" rows="2" name="vocalisations"><%= bird ? bird.vocalisations : '' %></textarea>
+          <br>
+
+          <!-- Submit-Button -->
+          <div class="row-md-8 text-right">
+            <a href="/" class="btn btn-secondary" tabindex="-1" role="button">Cancel</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div> 
+    </div>
+  </div>
+</body>
+<%- include('footer'); -%>

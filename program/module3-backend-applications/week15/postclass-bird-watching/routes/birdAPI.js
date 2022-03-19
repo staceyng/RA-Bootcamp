@@ -50,9 +50,10 @@ export const getBirdById = (req, resp) => {
     const data = res.rows;
     const bird = data[0];
     console.log(bird);
+    const values = [birdId];
 
-    const commentQuery = `SELECT * from ${commentTableName};`;
-    pool.query(commentQuery, (error, result) => {
+    const commentQuery = `SELECT * from ${commentTableName} WHERE bird_id = $1;`;
+    pool.query(commentQuery, values, (error, result) => {
       if (error) {
         console.log("[DB] Error executing query: ", error.stack);
         resp.status(503).send(result.rows);

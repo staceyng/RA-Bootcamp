@@ -7,7 +7,9 @@ import {
   getLoginForm,
   postLoginForm,
   userLogout,
+  specialRequest,
 } from "./routes/api.js";
+import { checkAuth } from "./middleware.js";
 
 const app = express();
 const router = express.Router();
@@ -18,6 +20,7 @@ router.post("/signup", postSignUpForm);
 router.get("/login", getLoginForm);
 router.post("/login", postLoginForm);
 router.get("/logout", userLogout); // should use delete here
+router.get("/special", checkAuth, specialRequest); // should use delete here
 
 // app middlewares
 app.set("view engine", "ejs");

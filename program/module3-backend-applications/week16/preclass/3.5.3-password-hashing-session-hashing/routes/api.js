@@ -73,6 +73,7 @@ export const postLoginForm = (req, resp) => {
       newSha.update(`${SALT}_${login.email}`); // use email as new cookie session
       const sessionHash = shaObj.getHash("HEX");
       resp.cookie("loggedIn", sessionHash);
+      resp.cookie("email", login.email);
       const renderObj = { message: "Login successful" };
       resp.render("login", renderObj);
     } else {
@@ -85,4 +86,9 @@ export const postLoginForm = (req, resp) => {
 export const userLogout = (req, resp) => {
   resp.clearCookie("loggedIn");
   resp.redirect("/login");
+};
+
+export const specialRequest = (req, resp) => {
+  const renderObj = { message: "YOU ARE LOGGED IN AND HAVE THE POWER" };
+  resp.render("special", renderObj);
 };

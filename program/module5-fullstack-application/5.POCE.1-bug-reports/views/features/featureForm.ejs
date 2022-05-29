@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BugReport</title>
+  </head>
+  <body>
+    <%- include('../nav'); %>
+    <!-- heading -->
+    <h2>Create Feature Form</h2>
+    <form action="/features" method="POST">
+      <!-- available features -->
+      <h3>Current features:</h3>
+      <ul id="available-features"></ul>
+      <!-- name -->
+      <h3>Add New feature:</h3>
+      <label for="name">Feature Name:</label><br />
+      <input type="text" id="name" name="name" value="" size="50" /><br />
+      <br />
+      <!-- submit -->
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="featureFormScript.js"></script>
+  </body>
+</html>

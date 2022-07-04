@@ -1,0 +1,65 @@
+<%- include('header'); -%>
+<%- include('navbar'); -%>
+<body>
+  <br>
+  <div class="container">
+      <!-- headings span -->
+      <div class="row-12">
+        <span id="headings-block">
+          <h1 class="display-4">Birds</h1>
+          <p class="fw-normal text-muted" >View and manage birds</p>
+          <hr class="border-2 border-top border-dark">
+        </span>
+      </div>
+      <!-- buttons -->
+      <div class="row">
+        <!-- add new sighting button -->
+        <div class="col-2 text-right">
+          <a class="btn btn-primary" href="/note" role="button">Add bird</a>
+        </div>
+      </div>
+      <!-- table view -->
+      <div class="row mt-3">
+        <table class="table table-light table-striped">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date Sighted</th>
+              <th scope="col">Appearance</th>
+              <th scope="col">User ID</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <% for (let i=0; i<birds.length; i+=1) { %>
+            <tr onclick="onTableRowClick(<%= birds[i].id %>)">
+              <th scope="row"> <%= birds[i].id %></th>
+              <td><%= birds[i].formatted_date %></td>
+              <td><%= birds[i].appearance %></td>
+              <td><%= ("user_id" in birds[i]) ? birds[i].user_id : 0 %></td>
+              <td><a class="btn btn-secondary" href="/note/<%= birds[i].id %>/edit" role="button">Edit</a></td>
+              <td>
+                <form method="POST" action="/note/<%= birds[i].id %>/delete?_method=DELETE">
+                  <button class="btn btn-secondary" type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- script -->
+    <script>
+        // document.getElementById('select-sort').sort.onchange = function() {
+        //     var newaction = `/?sort=${this.value}`;
+        //     document.getElementById('select-sort').action = newaction;
+        //     this.form.submit();
+        // };
+
+        function onTableRowClick(rowIdx) {
+            window.location.href = `/note/${rowIdx}`;
+        }
+
+    </script>
+</body>
+<%- include('footer'); -%>

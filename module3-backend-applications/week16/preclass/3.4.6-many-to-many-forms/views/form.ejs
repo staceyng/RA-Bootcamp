@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Many to many form exercise</h2>
+    <h3>ADD RECIPE DROPDOWN FORM</h3>
+    <form action="/recipe/<%= recipieId %>/categories" method="POST">
+      <% categories.forEach((category) => { %>
+      <label><%= category.name %></label>
+      <input type="checkbox" name="category_ids" value="<%= category.id %>" />
+      <% }); %>
+      <input type="text" name="label" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "recipes": [
+    { "label": "Cut Fruits", "ingredients": "Fruits" },
+    { "label": "Fried Ride", "ingredients": "White Rice" }
+  ]
+}

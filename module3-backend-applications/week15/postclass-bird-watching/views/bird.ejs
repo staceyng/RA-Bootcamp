@@ -1,0 +1,78 @@
+<%- include('header'); -%> <%- include('navbar'); -%>
+<body>
+  <div class="container">
+    <!-- first back button -->
+    <div class="row mt-3">
+      <a href="/" class="link-primary">< Back to all birds</a>
+    </div>
+    <!-- Bird description -->
+    <div class="row mt-3">
+      <div class="card text-center">
+        <div class="card-header">
+          <p>Bird #<%= bird.id %></p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Bird #<%= bird.id %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <%= bird.formatted_date %>
+          </h6>
+          <p class="card-text"><%= bird.behavior %></p>
+          <p class="card-text"><%= bird.flock_size %></p>
+          <p class="card-text"><%= bird.habitat %></p>
+          <p class="card-text"><%= bird.appearance %></p>
+          <p class="card-text"><%= bird.vocalisations %></p>
+        </div>
+        <h5 class="card-title">Note details</h5>
+        <div class="card-footer text-muted">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>Created at</td>
+                <td><%= bird.created_at %></td>
+              </tr>
+              <tr>
+                <td>Updated at</td>
+                <td><%= bird.updated_at %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+    </div>
+    <!-- comments -->
+    <div class="row mt-3">
+      <!-- existing comments -->
+      <% for (let c of comments ){ %>
+      <div class="card">
+        <div class="card-header">
+          <%= c.user_id ? c.user_id: 'Some user' %> commented at <%=
+          c.created_at ? c.created_at: 'Some date' %>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= c.comment %></p>
+        </div>
+      </div>
+      <% } %>
+      <!-- add comments -->
+      <form action="/note/<%= bird.id %>/comment" method="POST">
+        <div class="mb-3">
+          <br />
+          <label for="comment" class="form-label">Comment as user</label>
+          <textarea
+            class="form-control"
+            id="comment"
+            rows="2"
+            name="comment"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Comment</button>
+      </form>
+    </div>
+    <!-- second back button -->
+    <!-- <div class="row mt-3 justify-content-center">
+      <a href="/" class="btn btn-primary">Back to all birds</a>
+    </div> -->
+  </div>
+</body>
+<%- include('footer'); -%>

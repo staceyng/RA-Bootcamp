@@ -1,0 +1,8 @@
+{
+  "result": {
+    "first_name": "stacey",
+    "last_name": "ng",
+    "age": 90,
+    "favorite_foods": ["potato", "garlic", "pasta"]
+  }
+}

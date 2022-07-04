@@ -1,0 +1,84 @@
+<%- include('header'); -%> <%- include('navbar'); -%>
+<body>
+  <br />
+  <div class="container">
+    <% if (action == "signup"){ %>
+    <!-- headings span -->
+    <div class="row-12">
+      <span id="headings-block">
+        <h1 class="display-4">Sign up form</h1>
+        <p class="fw-normal text-muted">
+          Create a user by setting up email and password
+        </p>
+        <hr class="border-2 border-top border-dark" />
+      </span>
+    </div>
+    <!-- signup form -->
+    <div class="row-12">
+      <form method="POST" action="/signup">
+        <!-- email -->
+        <label for="email" class="form-label">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="name@example.com"
+        />
+        <br />
+        <!-- password -->
+        <label for="password" class="form-label">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+        />
+        <br />
+        <!-- Submit-Button -->
+        <div class="row-12 text-right">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <% } else { %>
+    <!-- headings span -->
+    <div class="row-12">
+      <span id="headings-block">
+        <h1 class="display-4">Login form</h1>
+        <p class="fw-normal text-muted">Login with email and password</p>
+        <hr class="border-2 border-top border-dark" />
+      </span>
+    </div>
+    <!-- login form -->
+    <div class="row-12">
+      <form method="POST" action="/login">
+        <!-- email -->
+        <label for="email" class="form-label">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="name@example.com"
+        />
+        <br />
+        <!-- password -->
+        <label for="password" class="form-label">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+        />
+        <br />
+        <!-- Submit-Button -->
+        <div class="row-12 text-right">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <% } %>
+  </div>
+</body>
+<%- include('footer'); -%>

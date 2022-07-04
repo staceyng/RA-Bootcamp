@@ -1,0 +1,35 @@
+body {
+  background-color: pink;
+}
+
+h1 {
+  margin: 30px;
+}
+
+.r1 {
+  border: 3px dotted red;
+}
+
+.r1c1 {
+  border: 3px solid blue;
+}
+
+.r1c2 {
+  border: 3px solid yellow;
+}
+
+.r1c3 {
+  border: 3px solid green;
+}
+
+.r2 {
+  border: 3px dotted red;
+}
+
+.r2c1 {
+  border: 3px solid blue;
+}
+
+.r2c2 {
+  border: 3px solid yellow;
+}

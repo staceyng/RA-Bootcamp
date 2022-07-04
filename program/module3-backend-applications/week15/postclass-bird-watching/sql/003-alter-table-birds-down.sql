@@ -1,2 +1,0 @@
-ALTER TABLE birds
-DROP COLUMN user_id;

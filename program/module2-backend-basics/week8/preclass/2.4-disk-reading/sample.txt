@@ -1,6 +1,0 @@
-hello world
-good morning
-rolly polly
-1 2
-bananas
-oranges

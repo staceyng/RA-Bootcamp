@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log("This is from index.js"),console.log("This is imported from cat.js = ","tom"),console.log("This is imported from mouse.js = ","jerry")})();

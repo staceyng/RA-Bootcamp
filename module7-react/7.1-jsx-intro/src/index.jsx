@@ -1,35 +1,33 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./styles.scss";
 
-const myRandomNum = Math.random() * 10;
-
-// Value of message depends on value of myRandomNum
-let message;
-if (myRandomNum > 5) {
-  message = <p>Wow past 5!!</p>;
-} else {
-  message = <p>Not that big of a num :</p>;
+// Use object decomposition to extract the warning prop from the props param.
+function BigText({ warning }) {
+  return (
+    <h1 className="hero-text">
+      {/* Render the warning prop. CSS class name "warning" is unrelated. */}
+      Hey <span className="warning">{warning}</span>
+    </h1>
+  );
 }
 
-// Create a JSX element using myRandomNum and message
-const myEl = (
-  <div>
-    <h1 className="hero-text">
-      Hey <span className="warning">Wow!</span>
-    </h1>
+function BigAnnouncement() {
+  const myEl = (
     <div>
-      <p>{myRandomNum}</p>
-      {myRandomNum > 5 && <p>Wow! Big numbers!</p>}
+      {/* Pass warning prop to BigText */}
+      <BigText warning="watch out!" />
+      <p>Lorem Ipsum!!</p>
     </div>
-  </div>
-);
-// Verify the element is what we expect
-console.log("myEl:", myEl);
+  );
+  console.log("myEl:", myEl);
+  return myEl;
+}
 
-// Create an element for React to render additional elements into
+// Create root element to render React elements into
 const rootElement = document.createElement("div");
-// Put that element onto the page
+// Append root element to document
+const root = createRoot(rootElement);
 document.body.appendChild(rootElement);
-// Have React render the new JSX element into the root element
-render(myEl, rootElement);
+// createRoot(container!) if you use TypeScript
+root.render(<BigAnnouncement />);

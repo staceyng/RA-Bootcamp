@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/index.jsx",
+    main: "./src/index.js",
   },
   output: {
     filename: "[name]-[contenthash].bundle.js",
@@ -24,18 +24,13 @@ module.exports = {
     rules: [
       {
         // Regex to decide which files to run Babel on
-        test: /\.(js|mjs|jsx)$/, // CHANGE HERE: jsx added
+        test: /\.(js|mjs|jsx)$/,
         exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader",
             options: {
-              // CHANGE HERE: ensure @babel/preset-react
-              presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-                { runtime: "automatic" },
-              ],
+              presets: ["@babel/preset-env", "@babel/preset-react"],
             },
           },
         ],
